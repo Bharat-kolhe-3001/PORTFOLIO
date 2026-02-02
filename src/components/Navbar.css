@@ -1,0 +1,148 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --accent: #00b4ff;
+  --muted: #aaa;
+  --nav-height: 80px; /* 🔥 single source of truth */
+}
+
+/* ================= NAVBAR ================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================= LEFT ================= */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.nav-name h1 {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.nav-tagline {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ================= LINKS ================= */
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-link-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.underline {
+  width: 70%;
+  height: 2px;
+  margin-top: 4px;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* ================= HAMBURGER ================= */
+.mobile-btn {
+  display: none;
+}
+
+.mobile-btn button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-dropdown {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + 1rem);
+  z-index: 9999;
+}
+
+.mobile-dropdown a {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: block;
+  }
+}
+
+/* ================= GLOBAL FIXES ================= */
+
+/* Prevent content hiding behind navbar */
+body {
+  padding-top: var(--nav-height);
+}
+
+/* Fix anchor scroll + Framer Motion viewport detection */
+section {
+  scroll-margin-top: calc(var(--nav-height) + 10px);
+}

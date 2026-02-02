@@ -1,0 +1,163 @@
+/* ---------- Root colors ---------- */
+:root {
+  --accent-skill: #00ffe0;
+  --muted-skill: #b0b0b0;
+}
+
+/* ---------- Skills Header (CENTERED & FIXED) ---------- */
+.skills-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 20px auto 16px auto;
+  padding: 0;
+  text-align: center;
+}
+.skills-container {
+  min-height: 100vh;
+  padding-top: 40px;
+}
+.skills-header h2 {
+  font-size: 1.25rem;
+  color: var(--accent-skill);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.skills-underline {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-skill);
+  margin: 8px auto;
+}
+
+.skills-header p {
+  color: var(--muted-skill);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ---------- Orb Area (CENTERED & RESPONSIVE) ---------- */
+.skills-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1200px;
+  height: 360px;
+  margin: 20px auto;
+
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 50%, #080808, #0f0f0f);
+  box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* ---------- Skill Orbs ---------- */
+.skill-circle {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.skill-circle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.3);
+}
+
+.skill-circle img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.36)) brightness(1.1);
+}
+
+.skill-circle span {
+  font-size: 10px;
+  color: rgba(180, 255, 255, 0.9);
+  line-height: 1;
+}
+
+/* ---------- Skills Table (CENTERED) ---------- */
+.skills-table {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ---------- Skill Box ---------- */
+.skill-box {
+  background: linear-gradient(145deg, #080808 0%, #0f0f0f 100%);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  border-radius: 12px;
+
+  padding: 18px 22px;
+  width: 300px;
+  text-align: left;
+}
+
+.skill-box h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-skill);
+  margin-bottom: 10px;
+}
+
+.skill-box ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.skill-box li {
+  font-size: 0.875rem;
+  color: var(--muted-skill);
+  margin-bottom: 6px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.skill-box li:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 768px) {
+  .skills-stage {
+    height: 300px;
+  }
+
+  .skill-box {
+    width: 90%;
+    max-width: 340px;
+  }
+}
