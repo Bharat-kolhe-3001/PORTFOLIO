@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import "../CSS/Contact.css";
 import "../index.css";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -34,6 +35,7 @@ export default function Contact() {
       setLoading(false);
       setShowPopup(true);
 
+      toast.success("Message sent successfully!");
       setForm({
         name: "",
         contact: "",
@@ -58,21 +60,7 @@ export default function Contact() {
   return (
     <section className="contact-section" id="contact">
       {/* 🔔 POPUP */}
-     <AnimatePresence>
-  {showPopup && (
-    <motion.div
-      className="contact-popup"
-      initial={{ x: 300, opacity: 0 }}     // 👉 from right
-      animate={{ x: 0, opacity: 1 }}       // 👉 center
-      exit={{ x: -100, opacity: 0 }}       // 👉 exit left
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      ✅ Message submitted successfully!
-    </motion.div>
-  )}
-</AnimatePresence>
-
-
+   
       <motion.h1
         className="contact-title"
         initial={{ opacity: 0, y: -15 }}
