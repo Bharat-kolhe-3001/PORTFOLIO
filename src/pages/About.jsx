@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUniversity, FaSchool, FaGraduationCap } from "react-icons/fa";
-import "../CSS/About.css";   // ✅ correct CSS import
+import { FaUniversity, FaUsers } from "react-icons/fa";
+import "../CSS/About.css";
 
 const AboutMe = () => {
   return (
@@ -36,6 +36,8 @@ const AboutMe = () => {
           <h3 className="education-header">Education</h3>
 
           <div className="education-cards">
+
+            {/* College */}
             <motion.div
               className="edu-card"
               whileHover={{ scale: 1.03 }}
@@ -43,7 +45,7 @@ const AboutMe = () => {
               <FaUniversity size={36} className="edu-icon" />
               <div>
                 <h4 className="edu-title">
-                   B.Tech in Computer Engineering
+                  B.Tech in Computer Engineering
                 </h4>
                 <p className="edu-institute">
                   Sanjivani College of Engineering
@@ -54,37 +56,36 @@ const AboutMe = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="edu-card"
-              whileHover={{ scale: 1.03 }}
-            >
-              <FaGraduationCap size={34} className="edu-icon" />
-              <div>
-                <h4 className="edu-title">
-                  Higher Secondary Education (12th)
-                </h4>
-                <p className="edu-institute">
-                  Maharashtra State Board
-                </p>
-              </div>
-            </motion.div>
+          </div>
+        </div>
+
+        {/* Leadership / Experience */}
+        <div className="education-section">
+          <h3 className="education-header">Leadership & Experience</h3>
+
+          <div className="education-cards">
 
             <motion.div
               className="edu-card"
               whileHover={{ scale: 1.03 }}
             >
-              <FaSchool size={32} className="edu-icon" />
+              <FaUsers size={34} className="edu-icon" />
               <div>
                 <h4 className="edu-title">
-                  Secondary Education (10th)
+                  Executive Committee Member, ACES
                 </h4>
                 <p className="edu-institute">
-                  Maharashtra State Board
+                  Association of Computer Engineering Students
+                </p>
+                <p className="edu-details">
+                  Organized technical events, workshops, and student activities while collaborating with team members.
                 </p>
               </div>
             </motion.div>
+
           </div>
         </div>
+
       </motion.div>
     </section>
   );
