@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #111;   /* dark look */
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: relative;
+  bottom: 0;
+}
