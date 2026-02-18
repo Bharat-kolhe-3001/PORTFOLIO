@@ -7,7 +7,7 @@ const NAV_HEIGHT = 80;
 const links = [
   { label: "Home", to: "home" },
   { label: "About Me", to: "about" },
-  { label: "Skills", to: "skills" }, // ✅ FIXED
+  { label: "Skills", to: "skills" }, 
   { label: "Projects", to: "projects" },
   { label: "Contact", to: "contact" },
 ];
@@ -16,7 +16,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
 
-  /* ---------- Smooth Scroll with Offset ---------- */
+ 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -32,7 +32,7 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
-  /* ---------- Scroll Spy (ACTIVE LINK FIXED) ---------- */
+  
   useEffect(() => {
     const sections = links
       .map(l => document.getElementById(l.to))
